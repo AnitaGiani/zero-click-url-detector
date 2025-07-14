@@ -3,13 +3,13 @@ document.getElementById("checkBtn").addEventListener("click", async () => {
   const url = tab.url;
 
   // Send URL to your Flask backend
-  fetch("https://your-render-url.onrender.com/predict", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ url: url })
-  })
+  fetch("https://your-app-name.onrender.com/predict", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ url: link.href })
+})
   .then(response => response.json())
   .then(data => {
     document.getElementById("urlResult").textContent = "Status: " + data.status;
